@@ -4,7 +4,6 @@ import '../App.css';
 import axios from 'axios';
 
 
-
 class CreateBook extends Component {
   constructor() {
     super();
@@ -35,7 +34,7 @@ class CreateBook extends Component {
     };
 
     axios
-      .post(`http://localhost:${process.env.PORT}/api/books`, data)
+      .post('http://localhost:5000/api/books', data)
       .then(res => {
         this.setState({
           title: '',
