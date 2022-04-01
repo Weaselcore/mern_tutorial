@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "build": "cd frontend && npm run build",
-    "install-client": "cd frontend && npm install && cd .. && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "node app.js",
+    "install-client": "cd frontend && npm install",
+    "install-server": "npm install",
+    "heroku-postbuild": "npm run install-client && npm run build && npm install",
+    "server": "nodemon app.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
   },
