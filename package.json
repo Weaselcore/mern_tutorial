@@ -6,8 +6,7 @@
   "scripts": {
     "build": "cd frontend && npm run build",
     "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "install-server": "cd .. && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build && cd .. && npm install",
     "server": "nodemon app.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
