@@ -12,8 +12,8 @@
 // mongodb+srv://admin:<password>@cluster0.7l4jv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 const express = require('express');
-const connectDB = require('./config/db');
 var cors = require('cors');
+const mongoose = require('mongoose');
 
 // Accessing the path module
 const path = require("path");
@@ -24,7 +24,22 @@ const books = require('./routes/api/books');
 const app = express();
 
 // Connect Database
-connectDB();
+
+try {
+  mongoose.connect(
+    "mongodb+srv://admin:admin@cluster0.7l4jv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
+
+  console.log('MongoDB is Connected...');
+} catch (err) {
+  console.error(err.message);
+  process.exit(1);
+};
+
 
 // cors
 app.use(cors({ origin: true, credentials: true }));
