@@ -33,8 +33,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
 // use Routes
-//app.use('/api/books', books);
-require("./routes/api/books.js")(app);
+app.use('/api/books', books);
 
 //app.get('/', (req, res) => res.send('Hello world!'));
 
