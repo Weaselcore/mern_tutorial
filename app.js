@@ -45,7 +45,8 @@ try {
 app.use(cors());
 
 // Init Middleware
-app.use(express.json({ extended: true }));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // use Routes
 app.use('/api/books', books);
