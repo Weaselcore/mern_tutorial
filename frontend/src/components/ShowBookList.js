@@ -21,7 +21,7 @@ class ShowBookList extends Component {
         })
       })
       .catch(err =>{
-        console.log('Error from ShowBookList');
+        console.log(`Error from ShowBookList + ${err.message}`);
       })
   };
 
