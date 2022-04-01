@@ -27,7 +27,7 @@ const app = express();
 
 try {
   mongoose.connect(
-    "mongodb+srv://admin:admin@cluster0.7l4jv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
